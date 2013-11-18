@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="libs/commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="libs/ejml-0.19-nogui.jar"/>
+	<classpathentry kind="lib" path="libs/gson-2.2.4.jar"/>
+	<classpathentry kind="lib" path="libs/joda-time.jar"/>
+	<classpathentry kind="lib" path="libs/jollyday.jar"/>
+	<classpathentry kind="lib" path="libs/opennlp-maxent-3.0.3.jar"/>
+	<classpathentry kind="lib" path="libs/opennlp-tools-1.5.3.jar"/>
+	<classpathentry kind="lib" path="libs/stanford-corenlp-3.2.0-models.jar"/>
+	<classpathentry kind="lib" path="libs/stanford-corenlp-3.2.0.jar"/>
+	<classpathentry kind="lib" path="libs/edu.mit.jwi_2.3.0.jar"/>
+	<classpathentry kind="lib" path="libs/hamcrest-core-1.3.jar"/>
+	<classpathentry kind="lib" path="libs/junit-4.11-javadoc.jar"/>
+	<classpathentry kind="lib" path="libs/junit-4.11-sources.jar"/>
+	<classpathentry kind="lib" path="libs/junit-4.11.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

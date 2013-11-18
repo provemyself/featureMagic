@@ -1,6 +1,9 @@
-*.class
-
-# Package Files #
-*.jar
-*.war
-*.ear
+libs/*
+bin/*
+models/*
+release/*
+dicts/*
+1_1_8
+Penn_Treebank_tag_set
+corpora/*
+stopwords/*

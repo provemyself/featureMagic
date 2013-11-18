@@ -1,0 +1,36 @@
+1、接口概述
+    在feature.jar包中的FeatureFacade类，是按照设计模式中的Facade模式设计的，为特征抽取提供的简化接口的类。该类一共包含了12个接口。
+分别如下：
+	<1>public static List<Map<String, Double>> extractFeatureMapForTrain(String docPath, Charset encoding);
+	<2>public static Map<String, Double> extractFeatureMapForTrain(String docStr, String score);
+	<3>public static List<Map<String, Double>> extractFeatureMapForTrain(List<String> docStrList, List<String> scoreList);
+
+	<4>public static List<Map<String, Double>> extractFeatureMapForPrediction(String docPath, Charset encoding);
+	<5>public static Map<String, Double> extractFeatureMapForPrediction(String docStr);
+	<6>public static List<Map<String, Double>> extractFeatureMapForPrediction(List<String> docStrList);
+
+	<7>public static String extractFeatureStringForPrediction(String docStr, boolean isSimpleFormat);
+	<8>public static List<String> extractFeatureStringForPrediction(List<String> docStrList, boolean isSimpleFormat);
+	
+	<9>public static List<String> extractFeatureStringForTrain(String docPath, boolean isSimpleFormat);
+	<10>public static List<String> extractFeatureStringForTrain(String docPath, boolean isSimpleFormat, Charset encoding);
+	<11>public static String extractFeatureStringForTrain(String docStr, boolean isSimpleFormat, String score);
+	<12>public static List<String> extractFeatureStringForTrain(List<String> docStrList, boolean isSimpleFormat,
+			List<String> scoreList);
+    在上述12个接口中，分为了四组：第一组的三个接口（<1><2><3>）是为模型训练设计的特征抽取接口，抽取的特征map中包含训练语料的标签。
+在本次项目中指的是score；第二组的三个接口（<4><5><6>）是为模型预测设计的特征抽取接口，即对一片未知打分的作文进行特征抽取，在抽取
+的特征map中不包含score；第三组的两个接口（<7><8>）也是为模型预测设计的，返回类型为String或者List<String>，方便打印和观察抽取的特征
+数据；第四组的四个接口（<9><10><11><12>）是为模型训练设计的，方便打印和观察抽取的特征数据。
+
+2）注意事项
+2.1）根据事先约定，第一组接口抽取的特征map中，表示作文打分（标签）的key是“score”。
+2.2）将抽取的特征表示为String时，有两种格式，一种是简单的，一种是复杂的。这两种格式的共同点是每一个String对象仅仅表示一篇作文的
+特征向量，区别是：简单格式在特征向量中仅仅以值的形式，而复杂格式在特征向量中是以键值对形式出现的。其中键值对是以“@@@”分隔的。
+2.3）在String表示的特征向量时，每一维特征之间使用水平制表符分隔的。
+	
+3）接口中的参数说明。由于上述12个接口中，大量参数的含义是相同的，所以在此集中解释。
+    docPath：表示语料的路径。
+	encoding：表示语料的编码, encoding的类型是Charset，所以如果要指定编码“UTF-8”时，在Java中，应该调用Charset.forName("UTF-8").
+	docStr: 表示某一篇语料的内容，类型为String。
+	score： 表示作文的打分，需要注意它的类型是String。
+	docStrList: 表示多篇语料，建议使用ArrayList.
